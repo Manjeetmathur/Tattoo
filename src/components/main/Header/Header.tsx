@@ -22,7 +22,7 @@ export default function Header() {
                         Home
                     </Link>
                     <Link href="/gallery" className="hover:text-red-500 transition-colors">
-                        Gallery
+                        Our Work
                     </Link>
                     {/* <Link href="/reviews" className="hover:text-red-500 transition-colors">
                         Reviews
