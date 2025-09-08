@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     "dotwork tattoo",
     "tattoo booking India",
   ],
+  verification: {
+    google: "pZli41Nz3TX5MpMf4PUrZprDEnf0_HwUw5-Pku3bBp0", // paste code here
+  },
   authors: [{ name: "Satya Tatto Studio " }],
   openGraph: {
     title: "Best Tattoo Studio in India | Custom & Minimal Tattoos",
@@ -54,7 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={` ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <FloatingButton/>
 
