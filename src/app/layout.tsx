@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/components/main/Header/Header";
 import Footer from "@/components/main/Footer/Footer";
 import FloatingButton from "@/components/main/Social/Social";
-
+import Script from "next/script";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -56,10 +56,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Analytics */}
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID`}
+        />
+        <Script
+          id="ga-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'GA_TRACKING_ID');
+            `,
+          }}
+        />
+      </head>
       <body
         className={` ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <FloatingButton/>
+        <FloatingButton />
 
         <Header />
         {children}
